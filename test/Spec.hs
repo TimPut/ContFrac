@@ -10,9 +10,11 @@ main = do
                      (take (length sqrtTwoOeis) . convergents $ [1] ++ [2,2..])
   print res
 
+sqrtTwoOeis :: [(Ratio Integer)]
 sqrtTwoOeis = zipWith (:%) sqrtTwoNums sqrtTwoDenoms
 
 -- https://oeis.org/A001333
+sqrtTwoNums :: [Integer]
 sqrtTwoNums =
   [ 1
   , 1
@@ -49,6 +51,7 @@ sqrtTwoNums =
   ]
 
 -- https://oeis.org/A000129
+sqrtTwoDenoms :: [Integer]
 sqrtTwoDenoms =
   [ 0
   , 1
