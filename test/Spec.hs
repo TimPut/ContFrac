@@ -1,13 +1,18 @@
 module Main (main) where
 
-import           GHC.Real         (Ratio (..))
+import           GHC.Real         (Ratio (..), (%))
 import           Numeric.Fraction
 import           Test.HUnit
 main :: IO ()
 main = do
-  _ <- runTestTT $
-      TestCase $ assertEqual "sqrt 2" sqrtTwoOeis
+  _ <- runTestTT . TestList $ [
+        TestCase $ assertEqual "sqrt 2" sqrtTwoOeis
                    (take (length sqrtTwoOeis) . convergents $ [1] ++ [2,2..])
+       -- Some existing libraries fail to terminate when the
+       -- convergents have all denominators bounded above by the
+       -- requested denominator
+       , TestCase $ assertEqual "Whole Number" (2 % 1) (approximate 100 2)
+       ]
   return ()
 
 sqrtTwoOeis :: [(Ratio Integer)]
