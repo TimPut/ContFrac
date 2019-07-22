@@ -41,7 +41,7 @@ test-suite ContFrac-test
 
   build-depends:       base ^>= 4.11.1.0
                      , ContFrac
-                     , quickcheck
+                     , HUnit
 
   ghc-options:         -Wall
                        -threaded
