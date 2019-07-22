@@ -33,9 +33,10 @@ lowerBounds = odds . convergents
   where odds (_:y:xs) = y : odds xs
         odds _        = []
 
--- computes the best rational approximation with bounded
--- denominator. In a case of convergent design with Khinchin, we set
--- the -1th convergent to the (merely) formal rational 1%0.
+-- computes the best rational approximation of the second kind with
+-- bounded denominator, using Khinchin's terminology. In a case of
+-- convergent design with Khinchin, we set the -1th convergent to the
+-- (merely) formal rational 1%0.
 approximate :: (Integral a, RealFrac t) => a -> t -> Ratio a
 approximate denom = approximateContinued denom  . toContinued
 
