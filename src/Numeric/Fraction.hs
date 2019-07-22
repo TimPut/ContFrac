@@ -35,7 +35,7 @@ approximate :: (Integral a, RealFrac t) => a -> t -> Ratio a
 approximate denom = approximateContinued denom  . toContinued
 
 approximateContinued :: Integral a => a -> [a] -> Ratio a
-approximateContinued denom = last . (++) [1 :% 0] . takeWhile (\q -> denominator q <= denom && denominator q /= 0) . strict . convergents
+approximateContinued denom = last . (++) [1 :% 0] . takeWhile (\q -> denominator q <= denom) . strict . convergents
 
 -- when strict is applied to a monotone list, a strictly monotone list is produced.
 strict :: Eq a => [a] -> [a]
