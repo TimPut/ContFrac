@@ -5,10 +5,10 @@ import           Numeric.Fraction
 import           Test.HUnit
 main :: IO ()
 main = do
-  res <- runTestTT $
-        TestCase $ assertEqual "sqrt 2" sqrtTwoOeis
-                     (take (length sqrtTwoOeis) . convergents $ [1] ++ [2,2..])
-  print res
+  _ <- runTestTT $
+      TestCase $ assertEqual "sqrt 2" sqrtTwoOeis
+                   (take (length sqrtTwoOeis) . convergents $ [1] ++ [2,2..])
+  return ()
 
 sqrtTwoOeis :: [(Ratio Integer)]
 sqrtTwoOeis = zipWith (:%) sqrtTwoNums sqrtTwoDenoms
