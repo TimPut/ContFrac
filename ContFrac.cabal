@@ -1,8 +1,8 @@
 cabal-version:       2.0
 name:                ContFrac
 version:             0.0.0
-synopsis:            provides functions for with working with continued fractions and to compute reduced rational approximations to real numbers.
-description:         provides functions for with working with continued fractions and to compute reduced rational approximations to real numbers.
+synopsis:            provides functions for working with continued fractions and to compute reduced rational approximations to real numbers.
+description:         provides functions for working with continued fractions and to compute reduced rational approximations to real numbers.
 license:             MIT
 license-file:        LICENSE
 author:              tim put
